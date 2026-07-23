@@ -4,12 +4,19 @@ phases:
   install:
     commands:
       - echo "Installing dependencies..."
+  pre_build:
+    commands:
+      - echo "Pre-build phase"
   build:
     commands:
-      - echo "Building project..."
+      - echo "Building website..."
       - ls -la
+  post_build:
+    commands:
+      - echo "Build completed successfully!"
 
 artifacts:
   files:
     - '**/*'
-  base-directory: .
+  base-directory: '.'
+  discard-paths: no
